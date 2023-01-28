@@ -8,12 +8,19 @@ export default function Home() {
   const themes = ["retro", "dark", "light", "cupcake", "bumblebee", "emerald", "corporate", "synthwave", "cyberpunk", "valentine", "halloween", "garden", "forest", "aqua", "lofi", "pastel", "fantasy", "wireframe", "black", "luxury", "dracula", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee", "winter"];
 
   useEffect(() => {
-    setCount(parseInt(localStorage.getItem("count")));
+    let localCount = localStorage.getItem("count");
+    if (localCount != null) {
+      setCount(parseInt(localStorage.getItem("count")));
+    } else {
+      setCount(0);
+    }
     themeChange(false);
   }, [])
 
   useEffect(() => {
-    localStorage.setItem("count", count);
+    if (count) {
+      localStorage.setItem("count", count);
+    }
   }, [count]);
 
   return (
