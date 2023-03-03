@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import ThemeSelector from "../components/themeSelector";
+import { ThemeSelector } from "../components";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -26,7 +26,6 @@ export default function Home() {
         <title>Hello this is wonderful ui world</title>
       </Head>
       <>
-
 
         <div className="navbar bg-base-100">
           <div className="navbar-start">
@@ -74,7 +73,6 @@ export default function Home() {
             <a className="btn">Get started</a>
           </div>
         </div>
-
 
         <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-5">
           <div className="card-body">
