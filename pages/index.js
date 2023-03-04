@@ -1,25 +1,9 @@
 import Head from 'next/head';
-import { ThemeSelector } from "../components";
-import { useState, useEffect } from "react";
+import { ThemeSelector, SampleCounter } from "../components";
 
 export default function Home() {
 
-  const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    let localCount = localStorage.getItem("count");
-    if (localCount != null) {
-      setCount(parseInt(localStorage.getItem("count")));
-    } else {
-      setCount(0);
-    }
-  }, [])
-
-  useEffect(() => {
-    if (count) {
-      localStorage.setItem("count", count);
-    }
-  }, [count]);
   return (
     <>
       <Head>
@@ -70,24 +54,11 @@ export default function Home() {
           </div>
           <div className="navbar-end">
             <ThemeSelector />
-            <a className="btn">Get started</a>
+            <a className="btn ml-5">Get started</a>
           </div>
         </div>
 
-        <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-5">
-          <div className="card-body">
-            <h2 className="card-title">Move Page counter!</h2>
-            <p>Current count : {count}</p>
-            <div className="card-actions justify-center">
-              <button className="btn btn-primary" onClick={() => {
-                setCount(count + 1)
-              }} >+</button>
-              <button className="btn btn-info" onClick={() => {
-                setCount(count - 1)
-              }} >-</button>
-            </div>
-          </div>
-        </div>
+        <SampleCounter />
 
       </>
     </>

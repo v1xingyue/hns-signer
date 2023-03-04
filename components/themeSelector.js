@@ -12,7 +12,7 @@ const ThemeSelector = () => {
     ];
 
     return (
-        <select className="select select-lg select-bordered w-full max-w-xs" data-choose-theme>
+        <select className="select select-bordered w-full max-w-xs" data-choose-theme>
             {
                 supportThemes.map((name, index) => {
                     return (<option key={index} value={name}>{name}</option>);
