@@ -3,7 +3,7 @@ import { Network, Alchemy } from 'alchemy-sdk';
 import { ethers } from 'ethers';
 
 const settings = {
-    apiKey: "qz9bKUjTnoRrVZE2qsIzEsBpTdmGiMB8",
+    apiKey: "rw5Yd7N-VMI0iT3_HzhO0qCZI7kG26ae",
     network: Network.ETH_MAINNET,
 };
 
@@ -34,7 +34,7 @@ export default async (req, res) => {
     let tokenId = BigInt(nameHash).toString();
 
     const lastBlock = await alchemy.core.getBlockNumber();
-    // const nfts = await alchemy.nft.getNftsForOwner("chaoverse.eth");
+    const nfts = await alchemy.nft.getNftsForOwner("chaoverse.eth");
 
     const owner = await alchemy.nft.getOwnersForNft("0xfeddc1448eb4480714a9942ba28a27b16caf9ce4", tokenId);
 
@@ -44,9 +44,8 @@ export default async (req, res) => {
         nameHash,
         tokenId,
         lastBlock,
-        // nfts,
+        nfts,
         owner
-        // ownerAddress
     });
 
 };
