@@ -8,8 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "alchemy-sdk": "^2.6.0",
     "autoprefixer": "^10.4.2",
     "daisyui": "^2.6.0",
+    "ethers": "^6.1.0",
     "next": "^12.1.0",
     "postcss": "^8.4.7",
     "react": "17.0.1",
