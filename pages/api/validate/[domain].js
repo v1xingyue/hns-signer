@@ -34,7 +34,9 @@ export default async (req, res) => {
     let tokenId = BigInt(nameHash).toString();
 
     const lastBlock = await alchemy.core.getBlockNumber();
-    const nfts = await alchemy.nft.getNftsForOwner("0xshah.eth");
+    // const nfts = await alchemy.nft.getNftsForOwner("chaoverse.eth");
+
+    const owner = await alchemy.nft.getOwnersForNft("0xfeddc1448eb4480714a9942ba28a27b16caf9ce4", tokenId);
 
     res.status(200).json({
         domain,
@@ -42,7 +44,8 @@ export default async (req, res) => {
         nameHash,
         tokenId,
         lastBlock,
-        nfts
+        // nfts,
+        owner
         // ownerAddress
     });
 
